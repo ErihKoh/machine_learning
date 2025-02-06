@@ -11,6 +11,7 @@ x_train = np.array(x_train)
 y_train = np.array([-1, 1, 1, -1, -1, 1, 1, -1, 1, -1])
 
 # Обчислення ваг
+#  Loss function: L_i(w) = (1 - y_i * (w^T * x_i))^2
 pt = np.sum([x * y for x, y in zip(x_train, y_train)], axis=0)
 xxt = np.sum([np.outer(x, x) for x in x_train], axis=0)
 w = np.dot(pt, np.linalg.pinv(xxt))  # Використовуємо псевдообернену матрицю
